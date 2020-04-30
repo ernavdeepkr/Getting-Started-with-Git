@@ -1,4 +1,7 @@
 # `GIT`
+
+> PDF File available in the repo but best view available in README.md file.
+
 ## `Introduction`
 Git is an Open Source ***Distributed Version Control System*** designed to manage the teamwork done on a project. Git helps the contributors to track the changes in files or projects and speed up the overall process.
 - **It is designed for :**
@@ -71,21 +74,21 @@ Git repository is the database where metadata about project file's history will 
 - **`Configuring git`** :
 *Configure user information for system level, user level and local repositories level*
   - **git config :** This command sets the author name and email address respectively to be used with your commits.
-    ```sh
+    ```
     : git config –-global user.name "FIRSTNAME LASTNAME"
     : git config –-global user.email "abc@example.com"
     : git config --global --list
     ```
   - **color highlighting :**
   The following commands enables color highlighting for Git in the console.
-    ```sh
+    ```
     git config --global color.ui auto
     ```
   - **Setting default editor :**
   By default, Git uses the system default editor, which is taken from the VISUAL or
   EDITOR environment variable. We can configure a different one by using git
   config.
-    ```sh
+    ```
     git config --global core.editor <editor>
     # for example:
     git config --global core.editor vim
@@ -100,186 +103,186 @@ Git repository is the database where metadata about project file's history will 
 once either locally and adding remote url, then push to GitHub, or by cloning an
 existing repository.*
   - **git init :** This command is used to start a new repository.
-    ```sh
+    ```
     git init [repository name]
     git remote add origin https://github.com/example/project.git
     ```
    
   - **git clone :** This command is used to obtain a repository from an existing URL.
-    ```sh
+    ```
     git clone [url]
     ```
 
 - **`Make changes`** :
 *Browse and inspect the evolution of project files*
   - **git add :** This command adds a file to the staging area.
-    ```sh
+    ```
     git add [file]  
     ```
   - This command adds one or more to the staging area.
-    ```sh
+    ```
     git add *  
     ```
   - **git commit :** This command records or snapshots the file permanently in the version history.
-    ```sh
+    ```
     git commit -m "[Type the commit message]"
     ```
   - This command commits any files you've added with the git add command and also commits any files you've changed since then.
-    ```sh
+    ```
     git commit -a  
     ```
   - **git tag :** This command is used to give tags to the specified commit.
-    ```sh
+    ```
     git tag [commitID]
     ```  
   - **git log :** This command is used to list the version history for the current branch.
-    ```sh
+    ```
     git log  
     ```
   - **decorated log** [add alias: `git config --global alias.lga "log --graph --oneline --all --decorate"`]
-    ```sh
+    ```
     git log --graph --oneline --all --decorate
     git lga (if alias added)
     ```
   - **git show :** This command shows the metadata and content changes of the specified commit.
-    ```sh
+    ```
     git show [commit]  
     ```
   - **git diff :** This command shows the file differences which are not yet staged.
-    ```sh
+    ```
     git diff  
     ```
   - This command shows the differences between the files in the staging area and the latest version present.
-    ``` sh
+    ```
     git diff --staged 
     ```
   - This command shows the differences between the two branches mentioned.
-    ```sh
+    ```
     git diff [first branch] [second branch]  
     ```
 - **`Redo commits`** :
 *Erase mistakes and craft replacement history*
   - **git reset :** This command unstages the file, but it preserves the file contents.
-    ```sh
+    ```
     git reset [file]  
     ```
   - This command undoes all the commits after the specified commit and preserves the changes locally.
-    ```sh
+    ```
     git reset [commit]  
     ```
   - This command discards all history and goes back to the specified commit.
-    ```sh
+    ```
     git reset --hard [commit] 
     ```
 - **`Check status`** :
   - **git status :** This command lists all the files that have to be committed.
-    ```sh
+    ```
     git status  
     ```
   - **git rm :** This command deletes the file from your working directory and stages the deletion.
-    ```sh
+    ```
     git rm [file]  
     ```
 
 - **`Git Branches`** : *Branching means diverging from the mainline and continue to work separately without messing with the mainline.* 
  
-![Test Image 1](resources/img/BRANCH1.png)
+![Test Image 1](resources/img/branch1.png)
   - **git branch :** 
       - This command lists all the local branches in the current repository.
-        ```sh
+        ```
         git branch  
         ```
     - This command creates a new branch
-      ```sh
+      ```
       git branch [branch name]  
       ```
     - This command deletes the feature branch.
-      ```sh
+      ```
       git branch -d [branch name]  
       ```
     - **git checkout :**
     This command is used to switch from one branch to another.
-      ```sh
+      ```
       git checkout [branch name]  
       ```
     - This command creates a new branch and also switches to it.
-      ```sh
+      ```
       git checkout -b [branch name]  
       ```
   - **`Add Remote :`**
   *A common repository on GitHub that all team member use to exchange their changes*
     - **git remote :** This command is used to connect your local repository to the remote server.
-      ```sh
+      ```
       git remote add [variable name] [Remote Server URL]  
       ```
 - **`Synchronise changes :`**
 *Synchronize your local repository with the remote repository on GitHub.com*
   - **git push :**
     - This command sends the committed changes of master branch to your remote repository.
-      ```sh
+      ```
       git push [variable name] master  
       ```
     - This command sends the branch commits to your remote repository.
-      ```sh 
+      ``` 
       git push [variable name] [branch]  
       ```
     - This command pushes all branches to your remote repository.
-      ```sh
+      ```
       git push --all [variable name]  
       ```
     - This command deletes a branch on your remote repository.
-      ```sh
+      ```
       git push [variable name] :[branch name]  
       ```   
   - **git pull :** 
     - This command fetches and merges changes on the remote server to your working directory.
-      ```sh
+      ```
       git pull [Repository Link]  
       ``` 
     
   - **git fetch :** The git fetch command downloads commits, files, and refs from a remote repository into your local repo. Fetching is what you do when you want to see what everybody else has been working on.
     - Fetch all of the branches from the repository. This also downloads all of the required commits and files from the other repository.
-      ```sh 
+      ``` 
       git fetch <remote>
       ```
     - Same as the above command, but only fetch the specified branch.
-      ```sh
+      ```
       git fetch <remote> <branch>
       ``` 
     - A power move which fetches all registered remotes and their branches:
-      ```sh
+      ```
       git fetch --all
       ```
     - The --dry-run option will perform a demo run of the command. 
-      ```sh
+      ```
       git fetch --dry-run
       ```
   - **git merge :** 
     - This command merges the specified branch’s history into the current branch.
-      ```sh
+      ```
       git merge [branch name]  
       ```
   - **git rebase :**
   *Rebase is another way to integrate changes from one branch to another. Rebase compresses all the changes into a single "patch." Then it integrates the patch onto the target branch.Unlike merging, rebasing flattens the history because it transfers the completed work from one branch to another. In the process, unwanted history is eliminated.*
     - **Create a feature branch based of master**
-      ```sh
+      ```
       git checkout -b feature_branch master
       ```
     - **Make changes whatever you want**
     - **commit your changes :**
-      ```sh
+      ```
       git commit -a -m "Adds new feature"
       ```
     - **git rebase :** This automatically rebases the current branch onto base.
-      ```sh
+      ```
       git rebase <base>
       ```
     - **Git Rebase Interactive :** *Running git rebase with the -i flag begins an interactive rebasing session. Instead of blindly moving all of the commits to the new base, interactive rebasing gives you the opportunity to alter individual commits in the process.*
-      ```sh
+      ```
       git rebase --interactive <base>
       ```
       - **Some git rebase interactive options :**
-        ```sh
+        ```
           pick 2231360 some old commit
           pick ee2adc2 Adds new feature
           # Rebase 2cf755d..ee2adc2 onto 2cf755d (9 commands)
@@ -297,19 +300,19 @@ existing repository.*
 - **`Git stash :`**
 *Use git stash when you want to record the current state of the working directory and the index, but want to go back to a clean working directory. The command saves your local modifications away and reverts the working directory to match the HEAD commit.*
   - **git stash :** This command temporarily stores all the modified tracked files.
-    ```sh
+    ```
     git stash save  
     ```
   - This command restores the most recently stashed files.
-    ```sh
+    ```
     git stash pop  
     ```
   - This command lists all stashed changesets. 
-    ```sh
+    ```
     git stash list  
     ```   
   - This command discards the most recently stashed changeset.
-    ```sh
+    ```
     git stash drop  
     ```
 
@@ -320,7 +323,7 @@ To create a local .gitignore file, create a text file and name it .gitignore (re
     - Open Git Bash.
     - Navigate to the location of your Git repository.
   - **Create a .gitignore file for your repository.**
-    ```sh 
+    ``` 
     $ touch .gitignore
     ```
 
@@ -337,7 +340,7 @@ To create a local .gitignore file, create a text file and name it .gitignore (re
 - **`Methods to create Git Alias :`** Aliases can be created through two primary methods.
   - **Directly editing Git config files :** The global or local config files can be manually edited and saved to create aliases.
     - **Examples :**
-  ```sh
+  ```
   [alias]
   co = checkout
   cm = commit -m
@@ -348,7 +351,7 @@ To create a local .gitignore file, create a text file and name it .gitignore (re
   ```
   - **Using the git config to create aliases :** git config command is a convenient utility to quickly create aliases. 
     - **Examples :**
-  ```sh
+  ```
   git config --global alias.co checkout
   git config --global alias.cm commit -m
   git config --global alias.po push origin
@@ -412,6 +415,6 @@ To create a local .gitignore file, create a text file and name it .gitignore (re
   - The command git cherry-pick is normally used to introduce particular commits from one branch within a repository onto a different branch. Another common use is to forward- or back-port commits from a maintenance branch to a development branch. This is in contrast with other ways such as merge and rebase which normally apply many commits onto another branch.
     
     - **Example :**
-      ```sh 
+      ``` 
       git cherry-pick <commit-hash>
       ```
